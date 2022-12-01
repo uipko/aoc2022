@@ -1,17 +1,20 @@
+import kotlin.math.max
+
 fun main() {
-    fun part1(input: List<String>): Int {
-        return input.size
+    part1("Day01")
+
+}
+
+fun part1(fileName: String) {
+    var maxCalories = 0
+    var sumOfCalories = 0
+    for (line in readInput(fileName)) {
+        if (line.isEmpty()) {
+            maxCalories = max(maxCalories, sumOfCalories)
+            sumOfCalories = 0
+        } else {
+            sumOfCalories += line.toInt()
+        }
     }
-
-    fun part2(input: List<String>): Int {
-        return input.size
-    }
-
-    // test if implementation meets criteria from the description, like:
-    val testInput = readInput("Day01_test")
-    check(part1(testInput) == 1)
-
-    val input = readInput("Day01")
-    println(part1(input))
-    println(part2(input))
+    println("The maximum number of Calories in an Elf's inventory is $maxCalories")
 }
