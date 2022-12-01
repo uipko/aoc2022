@@ -9,11 +9,20 @@ repositories {
 tasks {
     sourceSets {
         main {
-            java.srcDirs("src")
+            java.srcDirs("src/main")
         }
     }
 
     wrapper {
         gradleVersion = "7.6"
     }
+}
+
+dependencies {
+//    testImplementation(kotlin("test"))
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.0")
+}
+
+tasks.test {
+    useJUnitPlatform()
 }
