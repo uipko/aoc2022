@@ -13,4 +13,13 @@ class Day01KtTest {
         assertEquals(52, part2("Day01_smiple.txt"))
     }
 
+    @Test
+    fun `Test part1 with actual challenge file`() {
+        assertEquals(66487, part1("Day01.txt"))
+    }
+
+    @Test
+    fun `Test part2 with actual challenge file`() {
+        assertEquals(197301, part2("Day01.txt"))
+    }
 }
