@@ -1,3 +1,5 @@
+[![Kotlin CI with Gradle](https://github.com/uipko/aoc2022/actions/workflows/gradle.yml/badge.svg)](https://github.com/uipko/aoc2022/actions/workflows/gradle.yml)
+
 # aoc2022
 
 Let's see how far we will come with the Advent of Code[^aoc] challenges in Kotlin.
