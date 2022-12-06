@@ -10,7 +10,7 @@ const val offset_X = 'X'.code - 1
  */
 fun readInput(name: String) = {}.javaClass.classLoader.getResourceAsStream(name).bufferedReader().readLines()
 
-fun readText(name: String) = {}.javaClass.classLoader.getResourceAsStream(name).bufferedReader().readText()
+fun readFile(name: String) = {}.javaClass.classLoader.getResourceAsStream(name).bufferedReader().readText()
 
 /**
  * Converts string to md5 hash.
