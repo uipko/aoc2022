@@ -3,7 +3,7 @@ fun main() {
     val pairsContains = contains("Day04.txt")
     println("The total sum of pairs of elf to reconsider is: $pairsContains")
 
-    val pairsOverlap = overlap("Day04.txt")
+    val pairsOverlap = overlap_wip("Day04.txt")
     println("The total sum of pairs of elf to reconsider is: $pairsOverlap")
 }
 
@@ -20,15 +20,15 @@ fun contains(fileName: String): Int {
     return test
 }
 
-fun overlap(fileName: String): Int {
-    return readInput(fileName).count { pairs ->
-        pairs.split(",").map {
-            range -> range.split("-").map { it.toInt() }.toSet()
-        }.reduce { acc, next -> acc.intersect(next) }.isNotEmpty()
-    }
+fun overlap_wip(fileName: String): Int {
+    return readInput(fileName).map { pairs ->
+        pairs.split(",").map { range ->
+            range.split("-").let { (range.first()..range.last()).toSet() }
+        }
+    }.count { it.first().intersect(it.last()).isNotEmpty() }
 }
 
-fun overlap1(fileName: String): Int {
+fun overlap(fileName: String): Int {
     val test = readInput(fileName).count { pairs ->
         val elfRange = pairs.split(",").map {
                 range -> range.split("-").map { it.toInt() } }
